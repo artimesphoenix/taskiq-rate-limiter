@@ -3,7 +3,7 @@ name = "taskiq-rate-limiter"
 repository = "https://github.com/artimesphoenix/taskiq-rate-limiter"
 authors = [{ name = "Artimes Phoenix", email = "artimesphoenix@gmail.com" }]
 maintainers = [{ name = "Artimes Phoenix", email = "artimesphoenix@gmail.com" }]
-version = "0.1.0"
+version = "v0.1.0-b1"
 description = "An advanced async rate limiter middleware for Taskiq (Python). Features configurable pacing strategies (adaptive smoothing vs. fixed throughput), burst control, and task throttling."
 readme = "README.md"
 license = { file = "LICENSE" }
