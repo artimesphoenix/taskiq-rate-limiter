@@ -6,7 +6,8 @@ maintainers = [{ name = "Artimes Phoenix", email = "artimesphoenix@gmail.com" }]
 version = "0.1.0"
 description = "An advanced async rate limiter middleware for Taskiq (Python). Features configurable pacing strategies (adaptive smoothing vs. fixed throughput), burst control, and task throttling."
 readme = "README.md"
-requires-python = ">=3.9"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
 dependencies = [
     "taskiq>=0.11.18",
 ]
