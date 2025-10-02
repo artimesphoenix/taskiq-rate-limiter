@@ -31,7 +31,7 @@ Integrate the `RateLimitMiddleware` into your Taskiq broker and configure tasks 
 
 ```python
 from taskiq import InMemoryBroker
-from rate_limit_middleware import RateLimitMiddleware
+from taskiq_rate_limiter.rate_limit_middleware import RateLimitMiddleware
 
 # 1. Initialize the middleware with global defaults
 # Use the 'fixed' strategy to ensure a consistent 100 tasks per minute.
@@ -179,7 +179,7 @@ The `rate_limit_pacing_strategy` is a key configuration option that fundamentall
 -   **Mechanism:** It calculates a single, fixed pace based on the **total window time** and the **total limit** (e.g., `60 seconds / 100 tasks = 0.6s per task`). It then schedules each task at its ideal, pre-calculated time slot.
 -   **Behavior:** This strategy guarantees that all `limit` slots are available and spaced evenly throughout the window. If a task arrives *before* its ideal time slot, it will be delayed until that time, ensuring a perfectly even execution rate.
 
-[ rate_limiter_pacing_50_fixed.mp4](https://github.com/user-attachments/assets/12bb3937-1f40-4d50-bd5d-83c7b80c455c) 
+[ rate_limiter_pacing_50_fixed.mp4](https://github.com/user-attachments/assets/12bb3937-1f40-4d50-bd5d-83c7b80c455c)
 
 
 ### Use Case: No-Burst Pacing (`pacing_start_threshold=0`)
@@ -205,7 +205,7 @@ This example demonstrates how to configure different tasks with different rate-l
 ```python
 import asyncio
 from taskiq import InMemoryBroker
-from rate_limit_middleware import RateLimitMiddleware
+from taskiq_rate_limiter.rate_limit_middleware import RateLimitMiddleware
 
 # Use the default 'adaptive' strategy globally for safety
 broker = InMemoryBroker().with_middlewares(RateLimitMiddleware())
